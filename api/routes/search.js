@@ -10,8 +10,6 @@ router.get('/', async (req, res) => {
     if (!query) return res.status(400).json({ success: false, error: 'query parameter is required' });
 
     const data = await jiosaavnFetch('/api/search', { query });
-    console.log('Search results for query:', query, 'Data:', data);
-    console.log('Search results for query:', query, 'Data:', data);
     res.json(data);
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
